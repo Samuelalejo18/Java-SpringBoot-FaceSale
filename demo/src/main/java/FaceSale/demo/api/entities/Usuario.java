@@ -2,7 +2,10 @@ package FaceSale.demo.api.entities;
 
 
 import jakarta.persistence.*;
+
 import lombok.*;
+
+import java.util.List;
 
 /**
  * Esta clase representa la entidad USUARIO en la base de datos.
@@ -20,7 +23,7 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_USUARIO")
-    private int idUsuario;
+    private long idUsuario;
 
     @Column(name = "NOMBRE_USUARIO", nullable = false)
     private String nombreUsuario;
@@ -58,11 +61,11 @@ public class Usuario {
     @Column(name = "DIRECCION_USUARIO")
     private String direccionUsuario;
 
-    @Column(name = "DESCRIPTOR_FACIAL_USUARIO", columnDefinition = "CLOB")
-    private String descriptorFacialUsuario;
 
+    @Column(name = "DESCRIPTOR_FACIAL_USUARIO", columnDefinition = "ARREGLO_FACIAL")
+    private List<Double> descriptorFacialUsuario;
     @Column(name = "IMAGEN_FACIAL_USUARIO")
     private String imagenFacialUsuario;
 
-    
+
 }

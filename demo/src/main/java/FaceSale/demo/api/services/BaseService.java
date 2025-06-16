@@ -6,11 +6,15 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class BaseService<E, ID extends Serializable> implements InterfaceBaseService<E, ID> {
+public class BaseService<E, ID extends Serializable> implements InterfaceBaseService<E, ID> {
     protected BaseRepository<E, ID> baseRepository;
 
     public BaseService(BaseRepository<E, ID> baseRepository) {
         this.baseRepository = baseRepository;
+    }
+
+    public BaseService() {
+
     }
 
     @Override
